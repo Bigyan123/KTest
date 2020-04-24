@@ -11,4 +11,6 @@ install:
 
 ## Build and release to maven central  
 script: 
+    mvn verify -Dgpg.passphrase=bigyantest1
+    mvn release:perform -Darguments=-Dgpg.passphrase=bigyantest
     mvn clean deploy --settings .maven.xml -DskipTests=true -B -U -Prelease
