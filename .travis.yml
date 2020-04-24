@@ -1,2 +1,14 @@
  ## see https://travis-ci.org/phillip-kruger/apiee
 language: java
+
+## This will set the project version (as defined in your pom.xml) to an environment variable project.version
+before_deploy:
+  - mvn help:evaluate -N -Dexpression=project.version|grep -v '\['
+  - export project_version=$(mvn help:evaluate -N -Dexpression=project.version|grep -v '\[')
+  
+install:
+    mvn --settings .maven.xml install -DskipTests=true -Dgpg.skip -Dmaven.javadoc.skip=true -B -V
+
+## Build and release to maven central  
+script: 
+    mvn clean deploy --settings .maven.xml -DskipTests=true -B -U -Prelease
