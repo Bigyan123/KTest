@@ -2,8 +2,8 @@
     <servers>
         <server>
             <id>ossrh</id>
-            <username>/SpivNX3</username>
-            <password>{S/aY8rVtVzbeMMz49cKdlgHacLEmV8dv0btC0U8mjVxg}</password>
+           <username>${OSS_USERNAME}</username>
+            <password>${OSS_PASSWORD}</password>
         </server>
     </servers>
     <profiles>
@@ -13,8 +13,8 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <gpg.executable>gpg2</gpg.executable>
-                <gpg.passphrase>{bigyantest1}</gpg.passphrase>
+                <gpg.executable>gpg</gpg.executable>
+                 <gpg.passphrase>${GPG_PASSPHRASE}</gpg.passphrase>
             </properties>
        </profile>
     </profiles>
