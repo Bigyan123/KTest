@@ -2,8 +2,8 @@
     <servers>
         <server>
             <id>ossrh</id>
-           <username>${env.OSS_USERNAME}</username>
-            <password>${env.OSS_PASSWORD}</password>
+           <username>bigyantest</username>
+            <password>@Test@123456</password>
         </server>
     </servers>
     <profiles>
@@ -14,7 +14,7 @@
             </activation>
             <properties>
                 <gpg.executable>gpg</gpg.executable>
-                 <gpg.passphrase>${env.GPG_PASSPHRASE}</gpg.passphrase>
+                 <gpg.passphrase>bigyantest1</gpg.passphrase>
             </properties>
        </profile>
     </profiles>
