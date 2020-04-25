@@ -6,8 +6,8 @@
         <server>
             <!-- Maven Central Deployment -->
             <id>ossrh</id>
-            <username>/SpivNX3</username>
-            <password>S/aY8rVtVzbeMMz49cKdlgHacLEmV8dv0btC0U8mjVxg</password>
+            <username>${env.SONATYPE_USERNAME}</username>
+            <password>${env.SONATYPE_PASSWORD}</password>
         </server>
     </servers>
     
@@ -19,7 +19,7 @@
         </activation>
         <properties>
           <gpg.executable>gpg</gpg.executable>
-          <gpg.passphrase>bigyantest1</gpg.passphrase>
+          <gpg.passphrase>${env.SONATYPE_PASSPHRASE}</gpg.passphrase>
         </properties>
       </profile>
     </profiles>
