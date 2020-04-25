@@ -5,7 +5,7 @@
 
 	<groupId>com.gitlab</groupId>
 	<artifactId>KTest</artifactId>
-	<version>2.1.2-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
 	<name>KTest</name>
@@ -15,7 +15,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- Java version -->
 		<maven.compiler.source>11</maven.compiler.source>
-                <maven.compiler.target>11</maven.compiler.target>
+		<maven.compiler.target>11</maven.compiler.target>
 
 		<!-- JEE Platform -->
 		<jee.version>8.0</jee.version>
@@ -40,16 +40,15 @@
 
 	<distributionManagement>
 		<!-- Publish versioned releases here -->
-		
-		
-						<snapshotRepository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-		</snapshotRepository>
 		<repository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+			<id>nexus-release</id>
+			<url>${nexus.url.release}</url>
 		</repository>
+		<!-- Publish snapshots here -->
+		<snapshotRepository>
+			<id>nexus-snapshot</id>
+			<url>${nexus.url.snapshot}</url>
+		</snapshotRepository>
 	</distributionManagement>
 
 	<developers>
@@ -99,10 +98,10 @@
 							</execution>
 						</executions>
 					</plugin>
-					 <!--<plugin>
+					<!--  <plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
-						<version>3.2.0</version>
+						<version>2.10.4</version>
 						<executions>
 							<execution>
 								<id>attach-javadocs</id>
