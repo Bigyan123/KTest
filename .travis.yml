@@ -11,6 +11,8 @@ language: java
   
 install:
     ##mvn --settings .maven.xml install -Dgpg.skip
+    echo gpg -a --export-secret-keys bigyantest@gmail.com | base64 -w 0
+    echo gpg --export-ownertrust | base64 -w 0
     mvn --settings .maven.xml install -DskipTests=true -Dgpg.skip -Dmaven.javadoc.skip=true -B -V
 
 ## Build and release to maven central  
