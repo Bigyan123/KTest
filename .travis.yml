@@ -6,11 +6,11 @@ language: java
 before_install:
 ##      - openssl aes-256-cbc -K $encrypted_0a6446eb3ae3_key -iv $encrypted_0a6446eb3ae3_key -in all.gpg.enc -out all.gpg -d
 ##      - gpg --import all.gpg
-    ##- echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import
-    ##- echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust
+    - echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import
+    - echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust
     ##echo privatekey.txt | $GPG_EXECUTABLE --import
     ##echo $GPG_OWNERTRUST | $GPG_EXECUTABLE --import-ownertrust
-    echo privatekey.txt | base64 --encode
+    ##echo privatekey.txt | base64 --encode
   
 install:
     ##mvn --settings .maven.xml install -Dgpg.skip
