@@ -8,8 +8,8 @@ before_install:
 ##      - gpg --import all.gpg
     ##- echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import
     ##- echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust
-    echo privatekey.txt --import
-    echo Ownertrust.txt --import-ownertrust
+    echo privatekey.txt |$GPG_EXECUTABLE --import
+    echo Ownertrust.txt | $GPG_EXECUTABLE --import-ownertrust
   
 install:
     ##mvn --settings .maven.xml install -Dgpg.skip
